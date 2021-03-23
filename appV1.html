@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Times Tables</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1>Your Times Tables
+
+      <h2>Welcome to your Times Tables App! </h2>
+      
+      <p>Here you can practice your times tables.</p>
+      
+      <h2>Which times tables would you like to practice?</h2>
+
+      <input id = 'number-input' type='number'></input>
+      <button id= 'enter-button'>Enter</button>
+      <br/>
+    
+      <ul id= 'equations-ul'>
+        <li></li>
+      </ul>
+
+    <script src="" async defer>
+      var equations = [];
+
+      function displayEquations(){
+        var equationsUl = document.getElementById('equations-ul');
+        equationsUl.innerHTML = '';
+
+          for (var i = 0; i < equations.length; i++){
+            var equationsLi = document.createElement('li');
+
+            equationsLi.appendChild(equationsLi); 
+          }
+
+      }
+
+      function equation(event){
+
+        var numberInput = document.getElementById('number-input');
+        var timesTable = [1,2,3,4,5,6,7,8,9,10,11,12];
+        for (i = 0; i <= timesTable.length-1; i++) {
+          var question = prompt(numberInput + " times " + timesTable[i] + " is?")
+          var answer = numberInput * timesTable[i]
+          if (question !== null && question !== ''){
+            if (answer == question){
+            alert(x + " times " + timesTable[i] + " is?" + "  " + answer);
+            equations.push( numberInput + " times " + timesTable[i] + " is?" + "  " + answer);
+            } else{
+              alert("Not quite." + " " + numberInput + " times " + timesTable[i] + " is " + answer)
+              equations.push( numberInput + " times " + timesTable[i] + " is?" + "  " + answer);
+            }
+            equations.push( numberInput + " times " + timesTable[i] + " is?" + "  " + answer);
+          }
+          displayEquations();
+        }
+      }
+
+      var addInput = document.getElementById('add-input');
+      var enterButton = document.getElementById('enter-button');
+      enterButton.addEventListener('click', equation);
+      var numberInput = document.getElementById('number-input');
+
+      // enter submits value
+      // var enterInput = document.getElementById("number-input");
+      // enterInput.addEventListener("keyup", function(event) {
+      //   if (event.keyCode === 13) {
+      //   event.preventDefault();
+      //   document.getElementById("enter-button").click();
+      //  }
+      // });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+
+//Open times tables app
+
+//"Hi, Wellcome to your times tables app! 
+//Here you can practice your 2 to 12 times tables
+//or take a quiz to test your knowledge"
+
+//Would you like to practice or take a quiz?
+
+//Pactice ----------------------------
+
+
+//Which times table would you like to practice?
+//Remember you can practice your 2 to 12 times tables
+
+//Choose 4 tiimes tables
+//"Great lets practice"
+//1 times 4 is ? etc.
+//If correct "well done!" or "correct!" or "thats right!"
+//If incorrect "try again" or "not quite"
+//after 2 attempts "the correct answer to ${question} is ${answer}"
+//continues to 4 times 12.
+//when finised 
+//"thanks for for practicing with me! 
+//would you like to practice some more or are you ready for a quiz?"
+
+//if "practice", "Keep Practicing"  or "contine to practice"  
+//go back to beginning of practice menu
+//if "quiz", "take a quiz", or "im ready" 
+//go to quiz Menu 
+// -----------------------------
+
+//QUIZ --------------------------
+
+//"Which times table would you like to be quized on?
+//You will be asked 5 questions
+//Remember you can be quized on your 2 to 12 times tables"
+
+//if correct make a "ding"sound
+//if incorrect make a "buzz" sound
+//say" the correct answer is ${answer}
+
+// after 5 question the quiz in finsihed 
+//Amazing! you scored 5 out of 5.
+//"you scored 4 out of 5. Well done!"
+//"you scored 3/5" 
+
+//would you like to take anothter quiz or practice some more?
+
+// if practice go to practice menu
+// if quiz go to beginning of quiz menu.
+//---------------------------------------

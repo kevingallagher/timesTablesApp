@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Times Tables App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/style.css">
+  </head>
+  <body>
+
+
+      <h1>Welcome to your Times Tables App! </h1>
+      
+      <!-- <p> practice your times tables.</p> -->
+      
+      <h2>Which times tables would you like to practice?</h2>
+
+      <input id = 'number-input' type='number'></input>
+      <button id= 'enter-button'>Enter</button>
+      <br/>
+    
+      <ul id= 'equations-ul'>
+        <li></li>
+      </ul>
+
+    <script>
+      var equations = [];
+
+      function displayEquations(){
+
+        var equationsUl = document.getElementById('equations-ul');
+        equationsUl.innerHTML = '';
+
+          for (var i = 0; i < equations.length; i++){
+
+            var equationsLi = document.createElement('li');
+            equationsLi.innerText =  equations[i];
+
+            equationsUl.appendChild(equationsLi); 
+          } 
+
+      }
+
+      function mathsEquation(){
+        equations = [];
+        var numberInput = document.getElementById('number-input');
+        var x = numberInput.value;
+        if(x <= 12 && x > 0 ){
+          x = numberInput.value;
+        }
+        var numberToMultiplyBy = [1,2,3,4,5,6,7,8,9,10];
+        
+         for(i=0; i < numberToMultiplyBy.length; i++){
+
+            var question = prompt(x + " times " + numberToMultiplyBy[i] + " is?");
+            var answer = x * numberToMultiplyBy[i];
+            if (question === null){
+              break;
+            }
+            if (question === ''){
+              alert('Please enter a number.');
+              var secondChance = prompt(x + " times " + numberToMultiplyBy[i] + " is?");
+              if(answer == secondChance){
+                alert('Correct!'+ '\n' + x + ' times ' + numberToMultiplyBy[i] + ' is ' + answer);
+                equations.push( x + " times " + numberToMultiplyBy[i] + " is?" + "  " + answer);
+                continue;
+              }
+            }
+
+            if (answer != question){
+                  alert('Sorry not quite...'+ '\n' + x + ' times ' + numberToMultiplyBy[i] + ' is ' + answer);
+                  equations.push( x + " times " + numberToMultiplyBy[i] + " is?" + "  " + answer);
+                }else{
+                  alert('Correct!'+ '\n' + x + ' times ' + numberToMultiplyBy[i] + ' is ' + answer);
+                  equations.push( x + " times " + numberToMultiplyBy[i] + " is?" + "  " + answer);
+                }
+        
+          }
+          displayEquations();
+          
+         }
+
+
+      var enterButton = document.getElementById('enter-button');
+      enterButton.addEventListener('click', mathsEquation);
+      
+      var enterInput = document.getElementById("number-input");
+      enterInput.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("enter-button").click();
+       }
+      });
+
+    </script>
+  </body>
+</html>

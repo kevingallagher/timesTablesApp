@@ -36,7 +36,8 @@
 
     <script>
 
-      var equations = [];
+      var equations = [`4 times 1 is ? 4`,`4 times 2 is ? 4`,`4 times 3 is ? 4`,`4 times 4 is ? 4`,` ...etc`];
+      displayEquations();
 
       function displayEquations(){
 
@@ -58,10 +59,19 @@
         var numberInput = document.getElementById('number-input');
         var x = numberInput.value;
         var numberToMultiplyBy = [1,2,3,4,5,6,7,8,9,10];
+        
+        if (x == ''){
+          numberInput.value = 4;
+          x = 4
+        }
 
+        if (numberInput.value > 12 || numberInput.value < 0){
+          alert('Please choose between 1 and 12 times tables');
+          numberInput.value= '';
+          return;
+        }
 
          for(i=0; i < numberToMultiplyBy.length; i++){
-
             var question = prompt(x + " times " + numberToMultiplyBy[i] + " is ?");
             var answer = x * numberToMultiplyBy[i];
             
@@ -90,15 +100,12 @@
             if (answer != question){
                   alert('Sorry not quite...'+ '\n' + x + ' times ' + numberToMultiplyBy[i] + ' is ' + answer);
                   equations.push( x + " times " + numberToMultiplyBy[i] + " is ?" + "  " + answer);
-
                 }else{
                   alert('Correct!'+ '\n' + x + ' times ' + numberToMultiplyBy[i] + ' is ' + answer);
                   equations.push( x + " times " + numberToMultiplyBy[i] + " is ?" + "  " + answer);
-
                 }
-        
           }
-           displayEquations();
+          displayEquations();
           
       }
 
